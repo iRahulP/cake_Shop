@@ -1,12 +1,13 @@
 import React, {useState } from 'react';
+
 import './App.css';
+import Cart from './components/cart/Cart';
 import Shop from './components/core/Shop';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import CartProvider from './components/ux/CartProvider';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import CartProvider from './components/store/CartProvider';
 
 function App() {
-
   const [cartIsShown, setCartIsShown] = useState(false);
   
   const showCartHandler = () => {
@@ -18,8 +19,9 @@ function App() {
 
   return (
     <CartProvider>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler}/>
-      <main>
+      <main className="back">
         <Shop />
       </main>
       <Footer />

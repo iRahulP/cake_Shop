@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import AvailableCakes from './AvailableCakes';
+import CakesSummary from './CakesSummary';
 
 const Shop = () => {
     return (
-        <div>
-            <h2>Shop</h2>
-        </div>
+        <Fragment>
+            <CakesSummary />
+            <AvailableCakes />
+        </Fragment>
     )
 }
 

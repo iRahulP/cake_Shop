@@ -1,17 +1,36 @@
-.cakes {
-  max-width: 60rem;
-  width: 90%;
-  margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
-}
-
-.cakes ul {
-  list-style: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-@keyframes meals-appear {
+.body {
+  font-family: inherit;
+}
+
+.wrapper {
+  margin: 2rem;
+  /* display: flex; */
+  /* grid-gap:1rem; */
+  /* grid-template-columns: 1fr; */
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  display: inline-block !important;
+  vertical-align: text-top;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* .cakes {
+  max-width: 80rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: cakes-appear 1s ease-out forwards;
+} */
+
+@keyframes cakes-appear {
   from {
     opacity: 0;
     transform: translateY(3rem);

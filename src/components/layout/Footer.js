@@ -1,11 +1,10 @@
-import React from 'react'
+import { Fragment } from 'react';
 
 const Footer = (props) => {
-    return (
-        <div>
-            <h1>Footer</h1>            
-        </div>
-    )
-}
+  return (
+    <Fragment>
+    </Fragment>
+  );
+};
 
-export default Footer
+export default Footer;

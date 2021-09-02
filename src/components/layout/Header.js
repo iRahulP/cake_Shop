@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-
 import HeaderCartButton from './HeaderCartButton';
 import cakeImage from '../../assets/cake.jpg';
 import classes from './Header.module.css';

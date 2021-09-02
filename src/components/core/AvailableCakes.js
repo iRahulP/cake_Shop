@@ -1,4 +1,3 @@
-import Card from '../ui/Card';
 import classes from './AvailableCakes.module.css';
 import BakeItem from './cakeItems/BakeItem';
 
@@ -46,25 +45,25 @@ const DUMMY_DATA = [
     price: 48.99,
   },
   {
-    id: 'm7',
+    id: 'm8',
     name: 'Gulab Jamun Cake',
     description: 'Cream Cheese Frosting!',
     price: 48.99,
   },
   {
-    id: 'm7',
+    id: 'm9',
     name: 'Lemon Cake',
     description: 'Cream Cheese Frosting!',
     price: 48.99,
   },
   {
-    id: 'm7',
+    id: 'm10',
     name: 'Chocolate Cake',
     description: 'Cream Cheese Frosting!',
     price: 48.99,
   },
   {
-    id: 'm7',
+    id: 'm11',
     name: 'Cheese Cake',
     description: 'Awesome One!',
     price: 68.99,

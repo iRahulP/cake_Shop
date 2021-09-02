@@ -5,7 +5,9 @@ const Shop = () => {
     return (
         <div>
             <CakesSummary />
-            <AvailableCakes />
+            <div style={{display: "inline-block"}}>
+                <AvailableCakes />
+            </div>
         </div>
     )
 }

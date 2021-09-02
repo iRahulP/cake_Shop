@@ -11,24 +11,12 @@
 }
 
 .wrapper {
-  margin: 2rem;
-  /* display: flex; */
-  /* grid-gap:1rem; */
-  /* grid-template-columns: 1fr; */
-  /* justify-content: center; */
-  /* flex-direction: row; */
-  display: inline-block !important;
-  vertical-align: text-top;
-  margin: 0 auto;
+  display: flex;
   flex-wrap: wrap;
-}
-
-/* .cakes {
-  max-width: 80rem;
-  width: 90%;
-  margin: 2rem auto;
+  margin: 1rem 1rem 1rem 1rem;
+  justify-content: space-between;
   animation: cakes-appear 1s ease-out forwards;
-} */
+}
 
 @keyframes cakes-appear {
   from {

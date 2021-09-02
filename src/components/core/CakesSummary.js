@@ -3,7 +3,7 @@ import classes from './CakesSummary.module.css';
 const CakesSummary = () => {
   return (
     <section className={classes.summary}>
-      <h2>Delicious Food, Delivered To You</h2>
+      <h2>Delicious Cakes, Customized for You!</h2>
       <p>
         Choose your favorite cake from our broad selection of available meals
         and Enjoy.

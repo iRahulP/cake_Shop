@@ -1,4 +1,3 @@
-import Card from '../ui/Card';
 import classes from './AvailableCakes.module.css';
 import BakeItem from './cakeItems/BakeItem';
 
@@ -27,25 +26,65 @@ const DUMMY_DATA = [
     description: 'Chocolate King!',
     price: 48.99,
   },
+  {
+    id: 'm5',
+    name: 'Mango Cake',
+    description: 'Seasonal Summer fever!',
+    price: 58.99,
+  },
+  {
+    id: 'm6',
+    name: 'Strawberry Cake',
+    description: 'Chocolate King!',
+    price: 48.99,
+  },
+  {
+    id: 'm7',
+    name: 'Red Velvet',
+    description: 'Cream Cheese Frosting!',
+    price: 48.99,
+  },
+  {
+    id: 'm8',
+    name: 'Gulab Jamun Cake',
+    description: 'Cream Cheese Frosting!',
+    price: 48.99,
+  },
+  {
+    id: 'm9',
+    name: 'Lemon Cake',
+    description: 'Cream Cheese Frosting!',
+    price: 48.99,
+  },
+  {
+    id: 'm10',
+    name: 'Chocolate Cake',
+    description: 'Cream Cheese Frosting!',
+    price: 48.99,
+  },
+  {
+    id: 'm11',
+    name: 'Cheese Cake',
+    description: 'Awesome One!',
+    price: 68.99,
+  },
 ];
 
 const AvailableCakes = () => {
-  const mealsList = DUMMY_DATA.map((cake) => (
-    <BakeItem
-      key={cake.id}
-      id={cake.id}
-      name={cake.name}
-      description={cake.description}
-      price={cake.price}
-    />
-  ));
-
   return (
-    <section className={classes.cakes}>
-      <Card>
-        <ul>{mealsList}</ul>
-      </Card>
-    </section>
+    <div className={classes.wrapper}>
+      {
+        DUMMY_DATA.map((cake) => (
+          <BakeItem
+            key={cake.id}
+            id={cake.id}
+            name={cake.name}
+            description={cake.description}
+            price={cake.price}
+          />
+        ))
+      }
+    </div>
   );
 };
 

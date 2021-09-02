@@ -7,18 +7,21 @@ const DUMMY_DATA = [
     name: 'Pineapple Cake',
     description: 'Finest Cake',
     price: 52.99,
+    img: 'https://drive.google.com/file/d/11Uab9Kaw7VHAqNgKxD3rxiDg8p2PoFq5/view?usp=sharing'
   },
   {
     id: 'm2',
     name: 'Carrot Cake',
     description: 'A german specialty!',
     price: 48.5,
+    img: 'https://drive.google.com/file/d/11Uab9Kaw7VHAqNgKxD3rxiDg8p2PoFq5/view?usp=sharing'
   },
   {
     id: 'm3',
     name: 'Rasmalai Cake',
     description: 'Indian, savvy!',
     price: 62.99,
+    img: 'https://drive.google.com/file/d/11Wv5DgUKvTQu9YqKCdbKU6xFckZP8wnp/view?usp=sharing'
   },
   {
     id: 'm4',
@@ -68,6 +71,12 @@ const DUMMY_DATA = [
     description: 'Awesome One!',
     price: 68.99,
   },
+  {
+    id: 'm12',
+    name: 'Muffins',
+    description: 'Added Bakery!',
+    price: 10.99,
+  },
 ];
 
 const AvailableCakes = () => {
@@ -81,6 +90,7 @@ const AvailableCakes = () => {
             name={cake.name}
             description={cake.description}
             price={cake.price}
+            cakeImage={cake.img}
           />
         ))
       }

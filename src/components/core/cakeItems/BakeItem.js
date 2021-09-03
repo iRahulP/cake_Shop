@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import classes from './BakeItem.module.css';
 import BakeItemForm from './BakeItemForm';
 import CartContext from '../../store/CartContext';
-import cakeImage from '../../../assets/pexels-cake.jpg';
 
 const BakeItem = (props) => {
   const cartCtx = useContext(CartContext);
@@ -22,7 +21,7 @@ const BakeItem = (props) => {
       {console.log(props.cakeImage)}  
       <img 
         className={classes.cake__img} 
-        src={cakeImage} 
+        src={props.cakeImage} 
         alt='Cake' 
       />
       <div className={classes.cake__body}>  

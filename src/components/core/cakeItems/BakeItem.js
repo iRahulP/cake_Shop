@@ -18,7 +18,6 @@ const BakeItem = (props) => {
 
   return (
     <div className={classes.cake}>
-      {console.log(props.cakeImage)}  
       <img 
         className={classes.cake__img} 
         src={props.cakeImage} 

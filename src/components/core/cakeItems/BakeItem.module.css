@@ -1,16 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
-/* color variables */
-/* border radius */
-*, *::before, *::after {
-	 box-sizing: border-box;
-	 margin: 0;
-	 padding: 0;
-}
- body {
-	 font-family: "Noto Sans", sans-serif;
-	 color: #4f546c;
-}
- .wrapper {
+.wrapper {
 	 margin: 2rem;
 	 display: grid;
 	 gap: 1rem;

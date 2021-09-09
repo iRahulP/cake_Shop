@@ -1,12 +1,12 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import Shop from './components/core/Shop';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import CartProvider from './components/store/CartProvider';
 import Cart from './components/cart/Cart';
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore/lite';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const app = initializeApp({
   apiKey: "AIzaSyCZV1oVrlKAlP4Nl8CPZoVWBrBzKTkbpFc",
@@ -28,6 +28,7 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
+
   return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}

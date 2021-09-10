@@ -1,6 +1,8 @@
 import classes from './AvailableCakes.module.css';
 import BakeItem from './cakeItems/BakeItem';
-
+import { useEffect, useState } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../App';
 import carrotCake from '../../assets/carrot_cake.jpeg'
 import rasmalaiCake from '../../assets/rasmalai_cake.jpeg'
 import blackForestCake from '../../assets/black_forest_cake.jpg'
@@ -14,9 +16,7 @@ import mangoCheeseCake from '../../assets/mango_cheese_cake.jpg'
 import pineappleCake from '../../assets/pineapple_cake.jpg'
 import strawberryCake from '../../assets/strawberry_cake.jpg'
 
-
 const AvailableCakes = () => {
-  
   const DUMMY_DATA = [
     {
       id: 'm1',
@@ -104,19 +104,51 @@ const AvailableCakes = () => {
     },
   ];
 
+  console.log(DUMMY_DATA);
+  const [products, setProducts ] = useState([]);
+
+  useEffect(() => {
+    
+    const getProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const data = [];
+      await querySnapshot.forEach((doc) => {
+        let temp = doc.data();
+        temp.key = doc.id;
+        data.push(doc.data());
+      });
+      setProducts(data);
+    }
+    getProducts();
+
+    // const addProduct = async () => {
+    //   const docRef = await addDoc(collection(db, "products"), {
+    //     id: 'dummyID',
+    //     name: 'dummyProduct',
+    //     description: 'dummyDec!',
+    //     price: 10.99,
+    //     img: 'dummyIMGRef'
+    //   });
+    // }
+    // addProduct();
+
+  }, [])
+
+  const listData = products.map((cake) => (
+    <BakeItem
+      key={cake.id}
+      id={cake.id}
+      name={cake.name}
+      description={cake.description}
+      price={cake.price}
+      cakeImage={cake.img}
+    />
+  ))
+
   return (
     <div className={classes.wrapper}>
       {
-        DUMMY_DATA.map((cake) => (
-          <BakeItem
-            key={cake.id}
-            id={cake.id}
-            name={cake.name}
-            description={cake.description}
-            price={cake.price}
-            cakeImage={cake.img}
-          />
-        ))
+       listData 
       }
     </div>
   );

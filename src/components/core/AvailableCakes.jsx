@@ -105,10 +105,10 @@ const AvailableCakes = () => {
   ];
 
   console.log(DUMMY_DATA);
-  const [products, setProducts ] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    
+
     const getProducts = async () => {
       const querySnapshot = await getDocs(collection(db, "products"));
       const data = [];
@@ -134,21 +134,27 @@ const AvailableCakes = () => {
 
   }, [])
 
-  const listData = products.map((cake) => (
-    <BakeItem
-      key={cake.id}
-      id={cake.id}
-      name={cake.name}
-      description={cake.description}
-      price={cake.price}
-      cakeImage={cake.img}
-    />
-  ))
+  const listData = products.map((cake) => {
+    // Find the matching dummy data item to get the local image import
+    const dummyItem = DUMMY_DATA.find(d => d.name === cake.name || d.id === cake.id);
+    const imageSrc = dummyItem ? dummyItem.img : pineappleCake; // fallback to pineappleCake
+
+    return (
+      <BakeItem
+        key={cake.id}
+        id={cake.id}
+        name={cake.name}
+        description={cake.description}
+        price={cake.price}
+        cakeImage={imageSrc}
+      />
+    );
+  })
 
   return (
     <div className={classes.wrapper}>
       {
-       listData 
+        listData
       }
     </div>
   );
